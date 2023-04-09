@@ -41,10 +41,10 @@ public class AdministratorCertfications {
 			System.out.println("The Title is" + driver.getTitle());
 			
 			List<WebElement> list = shadow.findElementsByXPath("//div[contains(@class,'credentials-card_title')]");
-			//System.out.println(list);
-			
-			int count = list.size();
-			System.out.println(count);
+			for (int i = 0; i < list.size(); i++) {
+				String text1 = list.get(i).getText();
+				System.out.println(text1);
+			}
 			
 	}
 }

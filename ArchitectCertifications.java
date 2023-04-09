@@ -6,14 +6,9 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import io.github.sukgu.Shadow;
 
 public class ArchitectCertifications {
@@ -44,17 +39,23 @@ public class ArchitectCertifications {
    			driver.findElement(By.xpath("//div[@class='slds-p-horizontal--small slds-p-top--small'][2]")).click();
    			
    			List<WebElement> list = shadow.findElementsByXPath("//div[contains(@class,'credentials-card_title')]");
-		
-			int count = list.size();
-			System.out.println(count);
+   			for (int i = 0; i < list.size(); i++) {
+				String text1 = list.get(i).getText();
+				System.out.println("The Salesforce certification list" +text1);
+			}
 			
 			driver.findElement(By.xpath("//a[text()='Application Architect']")).click();
 			
 			List<WebElement> list1 = shadow.findElementsByXPath("//div[@class='credentials-card_title']");
+			for (int i = 0; i < list1.size(); i++) {
+				String text2 = list1.get(i).getText();
+				System.out.println("The Application Architect certification list" +text2);
+			}
 			
-			int countOf = list1.size();
-			System.out.println(countOf);
 			
+//			int countOf = list1.size();
+//			System.out.println(countOf);
+//			
  		
 		}
 }
