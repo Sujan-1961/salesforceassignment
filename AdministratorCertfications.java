@@ -25,7 +25,7 @@ public class AdministratorCertfications {
 			driver.findElement(By.xpath("//span[text()='Learn More']")).click();
 			Set<String> handles = driver.getWindowHandles();
 			List<String>child=new ArrayList<String>(handles);
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 			driver.switchTo().window(child.get(1));
 			driver.findElement(By.xpath("//button[text()='Confirm']")).click();
 			Shadow shadow = new Shadow(driver);
@@ -40,11 +40,18 @@ public class AdministratorCertfications {
 		  
 			System.out.println("The Title is" + driver.getTitle());
 			
+			if (driver.getTitle().contains("Certification - Administrator Overview")) {
+				System.out.println("I confirm the title as Certification - Administrator Overview");
+			} else {
+                      System.out.println("The title doesnt match");
+			}
+			
 			List<WebElement> list = shadow.findElementsByXPath("//div[contains(@class,'credentials-card_title')]");
 			for (int i = 0; i < list.size(); i++) {
 				String text1 = list.get(i).getText();
 				System.out.println(text1);
 			}
-			
+			int countOf = list.size();
+			System.out.println(countOf);
 	}
 }
