@@ -37,6 +37,8 @@ public class AdministratorCertfications {
 			actions.moveToElement(elementByXPath).perform();
 			
 			shadow.findElementByXPath("//a[text()='Salesforce Certification']").click();
+			
+			driver.findElement(By.xpath("//a[text()='Administrator']")).click();
 		  
 			System.out.println("The Title is" + driver.getTitle());
 			
