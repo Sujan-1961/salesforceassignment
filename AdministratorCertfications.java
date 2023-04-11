@@ -38,10 +38,12 @@ public class AdministratorCertfications {
 			
 			shadow.findElementByXPath("//a[text()='Salesforce Certification']").click();
 			
+			//Click on first resulting Ceritificate
 			driver.findElement(By.xpath("//a[text()='Administrator']")).click();
 		  
 			System.out.println("The Title is" + driver.getTitle());
 			
+			 //verify - Administrator Overview page
 			if (driver.getTitle().contains("Certification - Administrator Overview")) {
 				System.out.println("I confirm the title as Certification - Administrator Overview");
 			} else {
