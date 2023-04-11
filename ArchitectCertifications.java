@@ -38,11 +38,19 @@ public class ArchitectCertifications {
    			shadow.findElementByXPath("//a[text()='Salesforce Certification']").click();   			
    			driver.findElement(By.xpath("//div[@class='slds-p-horizontal--small slds-p-top--small'][2]")).click();
    			
+   			WebElement findText = driver.findElement(By.xpath("//div[text()=' Salesforce Architects are the most trusted digital advisors and respected team leaders in the ecosystem. They’re big-picture thinkers and in-depth problem solvers who take pride in designing systems that can stand up to anything. Salesforce Architect credentials comprise various certification paths that recognize specialized knowledge and skills, as well as your growing expertise using the Salesforce platform. ']"));
+  
+				String text3 = findText.getText();
+				System.out.println("The Summary is " +text3);
+			
+   			
    			List<WebElement> list = shadow.findElementsByXPath("//div[contains(@class,'credentials-card_title')]");
    			for (int i = 0; i < list.size(); i++) {
 				String text1 = list.get(i).getText();
 				System.out.println("The Salesforce certification list" +text1);
 			}
+   			int count = list.size();
+			System.out.println(count);
 			
 			driver.findElement(By.xpath("//a[text()='Application Architect']")).click();
 			
@@ -51,6 +59,8 @@ public class ArchitectCertifications {
 				String text2 = list1.get(i).getText();
 				System.out.println("The Application Architect certification list" +text2);
 			}
+			int countOf = list1.size();
+			System.out.println(countOf);
 			
 			
 //			int countOf = list1.size();
